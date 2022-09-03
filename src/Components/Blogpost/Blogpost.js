@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BlogsDetail from './Blogdetail';
-
+import './Blogpost.css'
 
 
 const Blogpost = () => {
@@ -20,7 +20,6 @@ const Blogpost = () => {
 
             <br />
             <p className="container">
-
             </p>
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-3 g-4 rounded-3">

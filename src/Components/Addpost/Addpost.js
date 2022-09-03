@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Navbar from '../Navbar/Navbar';
-import { Editor } from '@tinymce/tinymce-react';
+import JoditEditor from "jodit-react";
+
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import RoofingIcon from '@mui/icons-material/Roofing';
 import { Link } from "react-router-dom";
 import './Adpost.css'
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 
 const Addpost = () => {
+
+    const editor = useRef(null);
+    const [content, setContent] = useState("");
+    const config = {
+        readonly: false, // all options from https://xdsoft.net/jodit/doc/,
+        placeholder: "Start typings...",
+    };
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
@@ -19,8 +26,8 @@ const Addpost = () => {
     const onSubmit = data => {
         const blogsData = {
             title: data.title,
-            date: data.date,
-            content: data.content,
+            content: content,
+
 
         }
         // console.log(blogsData);
@@ -59,11 +66,11 @@ const Addpost = () => {
                 </Link>
             </div>
 
-            <div className="publish_float">
+            {/* <div className="publish_float">
                 <Link className='icon' to="/blog">
                     <AssignmentTurnedInIcon sx={{ fontSize: "45px" }} className="publish_float_btn dot" />
                 </Link>
-            </div>
+            </div> */}
 
             <form className='container ml-5 p-5 ' onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="">Title</label>
@@ -72,33 +79,15 @@ const Addpost = () => {
                 {errors.message && <span className="error">Name is required</span>}
                 <br />
 
-                <CKEditor
-                    editor={ ClassicEditor }
-                    data="<p>Hello from CKEditor 5!</p>"
-                    
-                    onChange={ ( event, editor ) => {
-                        const data = editor.getData();
-                        console.log( { event, editor, data } );
-                    } }
-                   
+
+
+                <JoditEditor
+                    ref={editor}
+                    value={content}
+                    config={config}
+                    tabIndex={2}
+                    onBlur={(newContent) => setContent(newContent)}
                 />
-
-
-
-                {/* <label htmlFor="">Date</label>
-                <input className="form-control mt-1" placeholder="dd/mm/yy" {...register("date")} />
-
-                {errors.message && <span className="error">Date is required</span>}
-                <br />
-
-
-                <label className="pra">Content</label>
-                <textarea placeholder="Write your content...." {...register("content", { required: true })} className="form-control" name='content' rows="5" id="content" />
-
-                {errors.message && <span className="error">Description is required</span>}
-                <br /> */}
-
-
 
                 <input className="btn-dark m-3" type="submit" />
 
