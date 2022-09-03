@@ -15,7 +15,7 @@ const BlogsDetail = (props) => {
                         <div className="card" onClick={() => { window.location.href = `/singleblog/${_id}` }} >
                             <div class="card-body">
                                 <h5 class="card-title">{title}</h5>
-                                <p class="card-text">To view Content click to bellow view button.</p>
+                                <p class="card-text">To view Content click the card.</p>
                             </div>
                         </div>
                     </div>
