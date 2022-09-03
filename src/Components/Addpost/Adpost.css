@@ -1,0 +1,48 @@
+.Home_float{
+    position: fixed;
+    top: 85px;
+    left: 0px;
+    right: 90%;
+    
+}
+
+.dot {
+    background-color: rgb(236, 233, 233);
+    border-radius: 12%;
+    display:inline;
+  }
+  .dot:hover {
+    background-color: rgb(236, 233, 233);
+    border-radius: 12%;
+    color: black;
+    display: inline;
+  }
+  .icon{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
+
+
+  .publish_float{
+    position: fixed;
+    top: 155px;
+    left: 0px;
+    right: 90%;
+    
+}
+
+.dot {
+    background-color: rgb(236, 233, 233);
+    border-radius: 12%;
+    display:inline;
+  }
+  .dot:hover {
+    background-color: rgb(236, 233, 233);
+    border-radius: 12%;
+    color: black;
+    display: inline;
+  }
+  .icon{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }

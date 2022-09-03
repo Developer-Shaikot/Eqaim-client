@@ -1,0 +1,23 @@
+.addpost_float{
+    position: fixed;
+    bottom: 15px;
+    right: 0px;
+    left: 85%;
+    
+}
+
+.dot {
+    background-color: rgb(177, 177, 177);
+    border-radius: 12%;
+    display:inline;
+  }
+  .dot:hover {
+    background-color: rgb(177, 177, 177);
+    border-radius: 12%;
+    color: black;
+    display: inline;
+  }
+  .icon{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }
